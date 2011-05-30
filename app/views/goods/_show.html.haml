@@ -16,11 +16,11 @@
 
 #images
 	#main_image
-		- if @variant.attached( :images ).any?
-			= render @variant.attached( :images ).first, :size => '470x470#', :gallery => 'gallery'
+		- if @variant.images.any?
+			= render @variant.images.first, :size => '470x470#', :gallery => 'gallery'
 		- else
 			= display_image( nil, '470x470#' )
 			
 	#additional_images
-		- if @variant.attached( :images ).any?
-			= render @variant.attached( :images ).drop( 1 ), :size => '150x150#', :gallery => 'gallery'
+		- if @variant.images.any?
+			= render @variant.images.drop( 1 ), :size => '150x150#', :gallery => 'gallery'

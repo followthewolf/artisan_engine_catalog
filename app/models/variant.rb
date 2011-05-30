@@ -36,6 +36,11 @@ class Variant < ActiveRecord::Base
 
   # ----------------------- Instance Methods ----------------------- #
 
+  def images
+    return attached( :images ) if attached( :images ).any?
+    good.master_variant.attached( :images )
+  end
+
   # Constructs a string in the format:
   # "Option Type Name: Option Value Name / Option Type Name: Option Value Name"
   def option_values_to_s
