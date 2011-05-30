@@ -1,5 +1,6 @@
-%li[good]
-	.name= good.name
-	.links
+%tr[good]
+	%td.sku= good.sku
+	%td.name= link_to good.name, good
+	%td.links
 		= link_to	'Edit', edit_good_path( good )
 		= button_to 'Delete', good_path( good ), :method => :delete
