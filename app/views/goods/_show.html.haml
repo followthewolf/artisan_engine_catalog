@@ -1,0 +1,26 @@
+= render 'update_current_variant_on_selection_change'
+
+#information
+	%h1= @good.name
+
+	.description
+		:markdown
+			#{ RDiscount.new( @good.description, :filter_html ).to_html }
+
+	.price
+		= price_for @variant
+
+	- for option_type in @good.option_types
+		= label_tag "#{ option_type.name }"
+		= select_tag_for_option_type( option_type )
+
+#images
+	#main_image
+		- if @variant.attached( :images ).any?
+			= render @variant.attached( :images ).first, :size => '470x470#', :gallery => 'gallery'
+		- else
+			= display_image( nil, '470x470#' )
+			
+	#additional_images
+		- if @variant.attached( :images ).any?
+			= render @variant.attached( :images ).drop( 1 ), :size => '150x150#', :gallery => 'gallery'

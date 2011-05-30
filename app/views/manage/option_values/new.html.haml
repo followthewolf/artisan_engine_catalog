@@ -1,0 +1,7 @@
+%h1 Add an Option Value to #{ parent.name }
+
+= form_for @option_value, :url => option_type_option_values_path( parent ) do |f|
+	= f.label 		:name
+	= f.text_field :name
+	
+	= f.submit

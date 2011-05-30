@@ -1,0 +1,15 @@
+= render 'shared/listability/make_sortable', :type => :option_type
+= render 'shared/listability/make_sortable', :type => :option_value, :parent_div => '.option_values'
+
+%h1 Manage Options
+
+%ol#option_types
+	= render @option_types.in_position
+
+%h4 Create an Option Type
+
+= form_for :option_type, :url => option_types_path, :remote => true do |f|
+	= f.label 		:name
+	= f.text_field :name
+	
+	= f.submit 		'Create Option Type'

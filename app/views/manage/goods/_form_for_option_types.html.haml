@@ -1,0 +1,5 @@
+- for option_type in OptionType.all
+	.add_option_type
+		= check_box_tag "option_type_#{ option_type.id }", option_type.id, @good.option_types.include?( option_type ), :name => 'good[option_type_ids][]'
+							
+		= label_tag "option_type_#{ option_type.id }", option_type.name

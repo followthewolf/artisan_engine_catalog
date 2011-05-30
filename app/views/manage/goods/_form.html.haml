@@ -1,0 +1,25 @@
+= render 'shared/form_errors', :object => @good
+
+= form_for @good do |f|
+	#basics
+		= f.label		:sku, 'SKU'
+		= f.text_field :sku
+
+		= f.label		:name
+		= f.text_field :name
+	
+		= f.label		:price
+		= f.text_field :price
+	
+	#description
+		= f.label		:description
+		%br
+		= f.text_area	:description
+	
+	- unless @good.variants.any?
+		#option_types_for_good
+			%h4 Option Types
+			= render 'manage/goods/form_for_option_types'
+	
+	#end_basics
+		= f.submit

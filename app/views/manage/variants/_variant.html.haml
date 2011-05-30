@@ -1,0 +1,16 @@
+%tr.variant
+	%td
+		- if variant.attached( :images ).any?
+			Using Custom Images
+		- else
+			Using Default Images
+			
+	%td= variant.sku
+	%td= number_to_currency( variant.price )
+	
+	- for option_type in @good.option_types
+		%td= variant.option_value_for( option_type ).name
+	
+	%td
+		=link_to 'Edit', edit_good_variant_path( @good, variant )
+		=button_to 'Delete', good_variant_path( @good, variant ), :method => :delete

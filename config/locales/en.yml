@@ -1,0 +1,5 @@
+en:
+  activerecord:
+    models:
+      option_type: Option Type
+      option_value: Option Value

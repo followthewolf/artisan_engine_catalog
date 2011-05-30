@@ -1,0 +1,5 @@
+= form_for @option_value, :url => option_type_option_value_path( @option_value.option_type, @option_value ) do |f|
+	= f.label 		:name
+	= f.text_field :name
+	
+	= f.submit

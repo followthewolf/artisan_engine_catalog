@@ -1,0 +1,5 @@
+:plain
+	$( '#variants' )
+		.html( "#{ escape_javascript( render @good.variants ) }" );
+
+= render 'shared/notify', :section => '#variant_notifications'

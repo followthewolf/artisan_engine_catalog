@@ -1,0 +1,5 @@
+%li[good]
+	.name= good.name
+	.links
+		= link_to	'Edit', edit_good_path( good )
+		= button_to 'Delete', good_path( good ), :method => :delete

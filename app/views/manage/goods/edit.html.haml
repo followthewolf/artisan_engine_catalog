@@ -1,0 +1,14 @@
+%h1 Edit #{ @good.name }
+
+= render 'form'
+
+- if @good.option_types.any?
+	%h2 Variants
+	#variant_notifications.notifications
+	= render 'manage/variants/all'
+
+%h2 Images
+= render 'manage/images/all',  :attachable => @good.master_variant
+
+%h4 Add an Image
+= render 'manage/images/form', :attachable => @good.master_variant, :return_to => edit_good_path( @good )

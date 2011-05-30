@@ -1,0 +1,28 @@
+- content_for :javascripts do
+	= javascript_include_tag 'artisan_engine/catalog/tablesorter/jquery.tablesorter.min'
+
+	:javascript
+		$(document).ready( function() {
+			$(".tablesorter").tablesorter(); 
+		});
+
+- content_for :stylesheets do
+	= stylesheet_link_tag 'artisan_engine/catalog/embed/tablesorter/blue/blue'
+
+%table.tablesorter
+	%thead
+		%tr
+			%th Images
+			%th= label_tag 'variant_sku', 'SKU'
+			%th= label_tag 'variant_price', 'Price'
+
+			- for option_type in @good.option_types
+				%th= label_tag "option_type_#{ option_type.id }", option_type.name
+			
+			%th
+			
+	%tbody#variants
+		= render @good.variants
+	
+	%tbody#add_variant
+		= render 'manage/variants/form'

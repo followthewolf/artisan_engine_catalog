@@ -1,0 +1,9 @@
+- if @variant
+	:plain
+		$( '#main' )
+			.html( "#{ escape_javascript( render :template => 'goods/show.html.haml' ) }" )
+
+- else
+	:plain
+		$( '.price' )
+			.html( "This variation is not available." )

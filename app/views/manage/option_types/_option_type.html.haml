@@ -1,0 +1,12 @@
+%li[ option_type ]
+	.handle= image_tag 'artisan_engine/listability/handle.png'
+	
+	.name= option_type.name
+	
+	.links
+		= link_to 'Add Option Value', new_option_type_option_value_path( option_type ) 
+		= link_to 'Edit', edit_option_type_path( option_type )
+		= button_to 'Delete', option_type_path( option_type ), :method => :delete
+	
+	%ol.option_values
+		= render option_type.option_values.in_position
