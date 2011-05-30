@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.name        = 'artisan_engine_catalog'
   s.summary     = 'Catalog functions for ArtisanEngine.'
-  s.description = 'TODO.'
+  s.description = 'Catalog functions for ArtisanEngine.'
   s.files       = Dir[ "{ app, config, lib }/**/*" ] + [ "Gemfile" ]
   s.version     = '0.0.1'
 
