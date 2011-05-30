@@ -1,6 +1,7 @@
 class GoodsController < FrontController
   def show
     @good    = Good.find( params[ :id ] )
+    @title   = @good.name
     
     if params[ :option_values ]
       option_values_array = params[ :option_values ].split( 'x' ).sort

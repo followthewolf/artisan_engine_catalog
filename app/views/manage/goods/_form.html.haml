@@ -16,10 +16,14 @@
 		%br
 		= f.text_area	:description
 	
-	- unless @good.variants.any?
-		#option_types_for_good
-			%h4 Option Types
-			= render 'manage/goods/form_for_option_types'
+	#option_types_for_good
+		%h4 Option Types
+		= render 'manage/goods/form_for_option_types'
 	
 	#end_basics
+		.unavailable
+			= f.label 	  :unavailable, 'This good is currently unavailable for purchase.'
+			= f.check_box :unavailable
+		
+		%br
 		= f.submit

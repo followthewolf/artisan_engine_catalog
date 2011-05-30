@@ -1,4 +1,13 @@
 PATH
+  remote: .
+  specs:
+    artisan_engine_catalog (0.0.1)
+      artisan_engine_attachments
+      artisan_engine_core
+      artisan_engine_listability
+      money (= 3.6.1)
+
+PATH
   remote: ../attachability
   specs:
     artisan_engine_attachability (0.0.1)
@@ -32,15 +41,6 @@ PATH
   specs:
     artisan_engine_listability (0.0.1)
       artisan_engine_core
-
-PATH
-  remote: .
-  specs:
-    artisan_engine_catalog (0.0.1)
-      artisan_engine_attachments
-      artisan_engine_core
-      artisan_engine_listability
-      money (= 3.6.1)
 
 GEM
   remote: http://rubygems.org/
