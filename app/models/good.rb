@@ -36,6 +36,10 @@ class Good < ActiveRecord::Base
     super
   end
   
+  def image
+    master_variant.images.first
+  end
+  
   private
       
     def ensure_no_variants( option_type )

@@ -7,12 +7,12 @@
 		:markdown
 			#{ RDiscount.new( @good.description, :filter_html ).to_html }
 
-	.price
-		= price_for @variant
-
-	- for option_type in @good.option_types
-		= label_tag "#{ option_type.name }"
-		= select_tag_for_option_type( option_type )
+	#options
+		- for option_type in @good.option_types
+			= label_tag "#{ option_type.name }"
+			= select_tag_for_option_type( option_type )
+	
+	.price= price_for @variant
 
 #images
 	#main_image

@@ -19,7 +19,7 @@ feature 'View a List of Goods', %q{
   scenario "I can view a list of goods" do
     # Then I should see the names of the goods linked to their pages.
     for name in %w( Uno Dos Tres )
-      page.should have_selector 'a', :text => name, :href => "/goods/#{ name.downcase }"
+      page.should have_selector 'a', :href => "/goods/#{ name.downcase }"
     end
   end
 end
