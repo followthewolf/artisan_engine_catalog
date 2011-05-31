@@ -5,7 +5,7 @@
 		%td= f.text_field 	:price
 
 		- for option_type in @good.option_types
-			%td= f.collection_select :option_value_ids, option_type.option_values, :id, :name, {}, { :id => "option_type_#{ option_type.id }", :name => "variant[option_value_ids][]" }
+			%td= f.collection_select :option_value_ids, option_type.option_values.in_position, :id, :name, {}, { :id => "option_type_#{ option_type.id }", :name => "variant[option_value_ids][]" }
 
 		%td
 			= f.submit 'Add Variant'
