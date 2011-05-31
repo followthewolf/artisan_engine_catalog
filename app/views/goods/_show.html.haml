@@ -17,7 +17,7 @@
 #images
 	#main_image
 		- if @variant.images.any?
-			= render @variant.images.first, :size => '470x470#', :gallery => 'gallery'
+			= render @variant.images.first, :size => '475x475#', :gallery => 'gallery'
 		- else
 			= display_image( nil, '470x470#' )
 			
