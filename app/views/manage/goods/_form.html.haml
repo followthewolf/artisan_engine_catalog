@@ -16,9 +16,13 @@
 		%br
 		= f.text_area	:description
 	
-	#option_types_for_good
-		%h4 Option Types
-		= render 'manage/goods/form_for_option_types'
+	- if @good.variants.any?
+		#option_types_for_good{ :style => 'display: none;' }
+			= render 'manage/goods/form_for_option_types'
+	- else
+		#option_types_for_good
+			%h4 Option Types
+			= render 'manage/goods/form_for_option_types'
 	
 	#end_basics
 		.unavailable

@@ -44,6 +44,6 @@ feature "Add an option type to a good", %q{
     visit "/goods/gnarlystick/edit"
     
     # Then the option type check-boxes should not appear.
-    page.should have_no_selector '#option_types_for_good'
+    page.should have_no_selector '#option_types_for_good', :visible => true
   end
 end
