@@ -43,8 +43,8 @@ feature 'View Good Variants', %q{
   
   scenario "I see an unavailability message when I select an unavailable variant", :js => true do
     # When I select the option values for an unavailable variant,
-    select 'Medium',    :from => 'Size'
-    select 'Brilliant', :from => 'Luminosity'
+    select 'Small',    :from => 'Size'
+    select 'Blinding', :from => 'Luminosity'
   
     # Then I should a message that the variant is not available.
     page.should have_content "not available"

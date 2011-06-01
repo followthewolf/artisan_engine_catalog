@@ -40,6 +40,16 @@ class Good < ActiveRecord::Base
     master_variant.images.first
   end
   
+  def potential_option_values_for( option_type )
+    potential_option_values = []
+    
+    for variant in variants
+      potential_option_values += variant.option_values.where( :option_type_id => option_type )
+    end
+    
+    potential_option_values.uniq
+  end
+  
   private
       
     def ensure_no_variants( option_type )
