@@ -1,5 +1,6 @@
 class Good < ActiveRecord::Base
   attr_accessor             :sku, :price
+  is_collectable
   
   has_one                   :master_variant,
                               :class_name => 'Variant',
