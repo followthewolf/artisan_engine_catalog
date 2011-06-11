@@ -2,6 +2,7 @@ require 'artisan_engine/core'
 require 'artisan_engine/listability'
 require 'artisan_engine/attachments'
 require 'money'
+require 'nested_has_many_through'
 require 'artisan_engine/catalog'
 
 module ArtisanEngine

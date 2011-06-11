@@ -1,6 +1,7 @@
 class OptionValue < ActiveRecord::Base
   belongs_to              :option_type
-  has_and_belongs_to_many :variants
+  has_many                :option_value_variants
+  has_many                :variants, :through => :option_value_variants
   
   has_listability         :within => :option_type
   

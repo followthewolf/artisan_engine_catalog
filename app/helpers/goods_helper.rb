@@ -8,7 +8,7 @@ module GoodsHelper
     return nil unless option_type.option_values.any?
     
     select_tag "#{ option_type.name }", 
-                options_from_collection_for_select( @good.potential_option_values_for( option_type ), 
+                options_from_collection_for_select( @potential_option_values.select{ |ov| ov.option_type_id == option_type.id }, 
                                                     :id, 
                                                     :name, 
                                                     option_value_for( @variant, option_type ) ),

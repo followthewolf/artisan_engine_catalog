@@ -1,14 +1,22 @@
-GIT
-  remote: git@github.com:followthewolf/artisan_engine_attachability.git
-  revision: ef9cbdcdd6a561c0004cc558ac515670ee2126e2
+PATH
+  remote: .
+  specs:
+    artisan_engine_catalog (0.0.1)
+      artisan_engine_attachments
+      artisan_engine_core
+      artisan_engine_listability
+      money (= 3.6.1)
+      nested_has_many_through (= 0.0.2)
+
+PATH
+  remote: ../attachability
   specs:
     artisan_engine_attachability (0.0.1)
       artisan_engine_core
       artisan_engine_listability
 
-GIT
-  remote: git@github.com:followthewolf/artisan_engine_attachments.git
-  revision: 231f4aba8602165ded0835c75fe72bac4ce894b5
+PATH
+  remote: ../attachments
   specs:
     artisan_engine_attachments (0.0.1)
       artisan_engine_attachability
@@ -16,9 +24,8 @@ GIT
       dragonfly (= 0.9.1)
       fog (= 0.8.2)
 
-GIT
-  remote: git@github.com:followthewolf/artisan_engine_core.git
-  revision: b156d841fa2b16c483112b3e652978c205d7514c
+PATH
+  remote: ../core
   specs:
     artisan_engine_core (0.0.1)
       barista (= 1.0.0)
@@ -30,21 +37,11 @@ GIT
       rails (= 3.0.7)
       rdiscount (= 1.6.8)
 
-GIT
-  remote: git@github.com:followthewolf/artisan_engine_listability.git
-  revision: 6278124da90d4235ea30b087c7dedd97489a49e7
+PATH
+  remote: ../listability
   specs:
     artisan_engine_listability (0.0.1)
       artisan_engine_core
-
-PATH
-  remote: .
-  specs:
-    artisan_engine_catalog (0.0.1)
-      artisan_engine_attachments
-      artisan_engine_core
-      artisan_engine_listability
-      money (= 3.6.1)
 
 GEM
   remote: http://rubygems.org/
@@ -153,6 +150,8 @@ GEM
     mime-types (1.16)
     money (3.6.1)
       i18n (~> 0.4)
+    nested_has_many_through (0.0.2)
+      rails (>= 3.0.0)
     net-ssh (2.1.4)
     nokogiri (1.4.4)
     polyglot (0.3.1)
@@ -198,6 +197,7 @@ GEM
       ffi (>= 1.0.7)
       json_pure
       rubyzip
+    sqlite3 (1.3.3)
     steak (1.1.0)
       rspec (>= 1.3)
     thor (0.14.6)
@@ -223,4 +223,5 @@ DEPENDENCIES
   launchy (= 0.4.0)
   rake (~> 0.8.7)
   rspec-rails (= 2.5.0)
+  sqlite3 (= 1.3.3)
   steak (= 1.1.0)

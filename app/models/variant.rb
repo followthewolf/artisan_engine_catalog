@@ -5,7 +5,8 @@ class Variant < ActiveRecord::Base
                                     :converter   => Proc.new { |value| value.respond_to?( :to_money ) ? value.to_money : 0.to_money }
                             
   belongs_to                :good
-  has_and_belongs_to_many   :option_values, :before_add => :ensure_no_more_than_one_value_for_each_good_option_type
+  has_many                  :option_value_variants
+  has_many                  :option_values, :through => :option_value_variants, :before_add => :ensure_no_more_than_one_value_for_each_good_option_type
   
   is_attachable
   

@@ -8,11 +8,18 @@ class Good < ActiveRecord::Base
   
   has_many                  :variants,
                               :conditions => { :is_master => false },
-                              :dependent  => :destroy  
+                              :dependent  => :destroy
   
-  has_and_belongs_to_many   :option_types, 
+  has_many                  :good_option_types
+  has_many                  :option_types, :through => :good_option_types,
                               :before_add    => :ensure_no_variants,
                               :before_remove => :ensure_no_variants  
+  
+  has_many                  :potential_option_values, 
+                              :through  => :variants, 
+                              :source   => :option_values, 
+                              :uniq     => true
+  
   
   has_friendly_id           :name, 
                               :use_slug => true
@@ -38,16 +45,6 @@ class Good < ActiveRecord::Base
   
   def image
     master_variant.images.first
-  end
-  
-  def potential_option_values_for( option_type )
-    potential_option_values = []
-    
-    for variant in variants
-      potential_option_values += variant.option_values.where( :option_type_id => option_type )
-    end
-    
-    potential_option_values.uniq
   end
   
   private

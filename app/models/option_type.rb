@@ -1,6 +1,7 @@
 class OptionType < ActiveRecord::Base
   has_many                :option_values, :dependent => :destroy
-  has_and_belongs_to_many :goods
+  has_many                :good_option_types
+  has_many                :goods, :through => :good_option_types
   
   has_listability
   
