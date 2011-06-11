@@ -17,8 +17,7 @@ class Good < ActiveRecord::Base
   
   has_many                  :potential_option_values, 
                               :through  => :variants, 
-                              :source   => :option_values, 
-                              :uniq     => true
+                              :source   => :option_values
   
   
   has_friendly_id           :name, 

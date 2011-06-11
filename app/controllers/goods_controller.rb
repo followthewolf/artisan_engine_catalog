@@ -2,7 +2,7 @@ class GoodsController < FrontController
   def show
     @good                    = Good.find( params[ :id ] )
     @title                   = @good.name
-    @potential_option_values = @good.potential_option_values.in_position
+    @potential_option_values = @good.potential_option_values.in_position.uniq
     
     if params[ :option_values ]
       option_values_array = params[ :option_values ].split( 'x' ).sort
